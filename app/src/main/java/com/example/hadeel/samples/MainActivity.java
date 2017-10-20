@@ -112,17 +112,17 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     String error = jsonObject.getString("code");
                     if (error.matches("R200")) {
+                        Intent intent = new Intent(getApplicationContext(), Home.class);
+                        startActivity(intent);
+                        
+                        Toast.makeText(getApplicationContext(), "Seccessful Login", Toast.LENGTH_SHORT).show();
 
-                        Toast.makeText(getApplication(),"No seccessful Login ",Toast.LENGTH_LONG).show();
 
                     }else {
 
 
-                            Intent intent = new Intent(getApplicationContext(), Home.class);
-                            startActivity(intent);
-                            finish();
-                            Toast.makeText(getApplicationContext(), "Seccessful Login", Toast.LENGTH_SHORT).show();
 
+                        Toast.makeText(getApplication(),"No seccessful Login ",Toast.LENGTH_LONG).show();
 
 
                     }
